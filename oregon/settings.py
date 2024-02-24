@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-$8cgk65xtgcs^h917vk6itz*iv7&)vm2v%48=*erkib&v355y2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['oregon-xbn4.onrender.com']
+ALLOWED_HOSTS = ['https://oregon-xbn4.onrender.com']
 
 
 # Application definition
