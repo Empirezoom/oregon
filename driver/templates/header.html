@@ -1,0 +1,28 @@
+{% load static %}
+<header>
+    <div class="container df_c_v jcsb">
+        <a href="{% url 'homepage' %}" class="logo">
+            <img src="{{profile.logo.url}}" alt="" />
+        </a>
+        <div class="menucontrols">
+            <a href="javascript:void();" class="showmenu df_c_hv">
+                <span class="fa-solid fa-bars"></span>
+            </a>
+        </div>
+        <nav>
+            <a href="javascript:void();" class="hidemenu df_c_hv">
+                <span class="fa-solid fa-times"></span>
+            </a>
+            <ul>
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- HEADER -->
+
+
+

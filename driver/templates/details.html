@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header %}
+	{% include "header2.html" %} 
+{% endblock header %}
+
+
+
+
+
+{% block content %}
+
+
+
+{% if applicant %}
+	
+
+<section class="contact flf"  style="background: url({{applicant.item_img.url}}) no-repeat center;">
+	<div class="container">
+		
+		<h2 style="color: white;">{{applicant.type}}</h2>
+		<h5 style="color: rgb(11, 4, 41);text-decoration: none;">Register as a {{applicant.type}} and proceed with Completion Form <a href="http://localhost:8000/#about" style="color: orangered;">Terms and Conditions Apply</a></h5>
+
+		<form class="flf df_c_v jcsb"  method="POST" action="{% url 'application' applicant.id applicant.slug %}">
+			{% csrf_token %}
+			<input type="text" name="full_name" placeholder="Full-Name*" >
+			<input type="email" name="email" placeholder="Email*" >
+			<input type="text" name="address" placeholder="Address*" >
+			
+			<a href="{% url 'homepage' %}">
+				<button id="submit" type="submit" name="submit">
+					Apply &nbsp; <span class="fa-solid fa-angle-right"></span> 
+				</button>
+			</a>
+			
+			
+		</form>
+
+	</div>
+</section>
+
+{% endif %}
+	
+
+
+{% endblock content %}
+
+
+
+
+
+{% block footer %}
+	{% include "footer.html" %} 
+{% endblock footer %}
+
+
+

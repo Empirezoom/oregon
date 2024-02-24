@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header %}
+	{% include "header.html" %} 
+{% endblock header %}
+
+{% block banner %}
+	{% include "banner.html" %} 
+{% endblock banner %}
+
+{% block brand %}
+	{% include "brand.html" %} 
+{% endblock brand %}
+
+{% block content %}
+	
+<section class="services flf" id="services">
+	<div class="container">
+		
+		<h2> Application Form</h2>
+		<h4>
+			Proceed with application form , as our technical-team will mail you all necessary documents required for registration, In addition we will send you the nearest office address for screening.
+			
+		</h4>
+
+		<div class="servicesitemswrap gallery">
+			
+
+			
+			{% if apply %}
+				
+				{% for item in apply %}
+					
+					<div class="item">
+						<div class="itemcontent">
+							<div class="thumb">
+								<img src="{{item.item_img.url}}" alt=""> 
+							</div>
+							<h3>{{item.type}}</h3>
+							
+
+							<p>
+								{{item.p1}}
+							</p>
+
+						
+							<p>
+								{{item.p2}}
+							</p>
+						
+						
+						
+								
+						
+						
+							<p>
+								{{item.p3}}
+							</p>
+							<p>
+								{{item.p4}}
+							</p>
+							<p>
+								{{item.p5}}
+							</p>
+						
+							<br><br>
+							<a href="{% url 'application' item.id item.slug %}" class="btn">
+								Apply Now <span class="fa-solid fa-angle-right"></span>
+							</a>
+						</div>
+					</div>
+
+				{% endfor %}
+					
+			{% endif %}
+				
+
+
+
+		
+
+
+
+
+	
+		
+
+
+
+
+
+		</div>
+
+	</div>
+</section>
+<!-- SERVICES -->
+{% endblock content %}
+
+{% block about %}
+	{% include "about.html" %} 
+{% endblock about %}
+
+{% block contact %}
+	{% include "contact.html" %} 
+{% endblock contact %}
+
+{% block map %}
+	{% include "map.html" %} 
+{% endblock map %}
+
+{% block footer %}
+	{% include "footer.html" %} 
+{% endblock footer %}
+
+
+

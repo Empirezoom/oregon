@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header %}
+	{% include "header2.html" %} 
+{% endblock header %}
+
+
+
+
+
+{% block content %}
+
+
+
+
+
+<section class="banner flf bfr contact"   id="contact" style="background: url({{profile.notification.url}}) no-repeat center;" id="contact" style="background-color: grey;">
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div class="container">
+		
+	
+		<h2 style="color: white;">  🔔 Message Recieved 📨 ✅</h2>
+		<h5 style="color: white;font-weight: 900;"> {% if messages %}
+			{% for item in messages %}
+			   {{item}}
+			{% endfor %}
+		  {% endif %}</h5>
+	
+
+		
+	
+
+	</div>
+</section> 
+
+
+	
+
+
+{% endblock content %}
+
+
+
+
+
+{% block footer %}
+	{% include "footer.html" %} 
+{% endblock footer %}
+
+
+

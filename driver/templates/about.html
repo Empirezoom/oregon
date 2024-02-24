@@ -1,0 +1,41 @@
+{% load static %}
+
+
+<section class="about flf" id="about">
+    <div class="container df_c_v jcsb">
+        <div class="text">
+            <h2>About Us</h2>
+            <p>
+                {{profile.p1}}
+                
+            </p>
+            <p>
+                
+                {{profile.p2}}
+                
+            </p>
+            <p>
+                {{profile.p3}}
+            </p>
+            <p>
+                {{profile.p4}}
+            </p>
+
+            <div class="video">
+                <video  controls autoplay muted loop style="object-fit: cover;width: 100%;height: 30rem;">
+                    <source src="{{profile.video.url}}" type="video/mp4">
+                </video>
+            </div>
+
+            <p>
+              {{profile.address}}
+                
+
+            </p>
+            <p>
+                 {{profile.copyright}}
+            </p>
+        </div>
+    </div>
+</section>
+<!-- ABOUT US -->

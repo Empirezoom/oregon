@@ -1,0 +1,42 @@
+{% load static %}
+<footer class="flf" style="background-color: black;">
+    <div class="container">
+        <div class="row">
+            <div class="column al df_c_v ">
+                <img src="{{profile.favicon.url}}" alt="" style="height: 25px;width: 25px;">
+                <p style="color: orange;font-weight: 900;">
+                    Oregon Trucking
+                </p>
+                <p style="color: orange;font-weight: 900;">
+                    <a href="#map" style="color: white;font-weight: bolder;"><span class=" fa-solid fa-location-dot"></span>{{profile.address}}</a>
+                </p>
+
+            </div>
+
+            
+            <div class=" column al df_c_v">
+            
+            
+                <ul style="text-align: center;">
+                    <li style="color: black;font-weight: bolder;">Quick Links</li>
+                    <li><a href="{% url 'homepage' %}" style="color: white;font-weight: bolder;">Home</a></li>
+                    <li><a href="#" style="color: white;font-weight: bolder;">About</a></li>
+                    <li><a href="#" style="color: white;font-weight: bolder;">Apply</li>
+                </ul>
+                
+            </div>
+
+            <div class="column al df_c_v">
+                <ul >
+                    <li style="color: orange;font-weight: 900;">Contacts us</li>
+                    <li ><a href="mailto:{{profile.email}}"  style="color: white;font-weight: bolder;"><i class="fa-solid fa-envelope"></i>{{profile.email}}</a></li>
+                    <li><a href="sms:{{profile.phone}}?&body=Hi%20there%20I%2520my%20name%20is%2520NAME" style="color: white;font-weight: bolder;"><span class="fa-brands fa-whatsapp"></span>&nbsp;{{profile.phone}}</a></li>
+                    {% comment %} <li><a href="#map" style="color: white;font-weight: bolder;"><span class=" fa-solid fa-location-dot"></span>{{profile.address}}</a></li>  {% endcomment %}
+                </ul>
+            </div>
+            
+        </div>
+        
+    </div>
+</footer>
+<!-- FOOTER -->
