@@ -3,126 +3,74 @@
 {% load static %}
 
 {% block header %}
-	{% include "header2.html" %} 
-{% endblock header %}
-
-
-
-
+  {% include 'header2.html' %}
+{% endblock %}
 
 {% block content %}
+  {% if applicant %}
+    <section class="services flf" id="services">
+      <div class="container">
+        <h2>Payment Section</h2>
+        <h4>Charging a flat fee for the application form due to the value of the outset, Deposit a sum of $50 to any of the wallet below and click 'I Have Made Payment✅' for confirmation.</h4>
 
+        <div class="servicesitemswrap gallery">
+          {% if btc %}
+            <div class="item">
+              <div class="itemcontent">
+                <div class="thumb">
+                  <a href="{{ btc.scan.url }}"><img src="{{ btc.scan.url }}" alt="" /></a>
+                </div>
+                <h3>Bitcoin</h3>
+                <p>
+                  <img src="{{ btc.cryptologo.url }}" alt="" />Wallet
+                  <button onclick="CopyText1()">Copy Address</button>
+                  <input type="text" value="{{ btc.wallet_address }}" id="yourtext1" />
+                </p>
+                <a href="{% url 'confirmation' applicant.id applicant.slug %}" class="btn">I Have Made Payment✅<span class="fa-solid fa-angle-right"></span></a>
+              </div>
+            </div>
+          {% endif %}
 
+          {% if bnb %}
+            <div class="item">
+              <div class="itemcontent">
+                <div class="thumb">
+                  <a href="{{ bnb.scan.url }}"><img src="{{ bnb.scan.url }}" alt="" /></a>
+                </div>
+                <h3>BNB</h3>
+                <p>
+                  <img src="{{ bnb.cryptologo.url }}" alt="" />Wallet
+                  <button onclick="CopyText2()">Copy Address</button>
+                  <input type="text" value="{{ bnb.wallet_address }}" id="yourtext2" />
+                </p>
+                <a href="{% url 'confirmation' applicant.id applicant.slug %}" class="btn">I Have Made Payment✅<span class="fa-solid fa-angle-right"></span></a>
+              </div>
+            </div>
+          {% endif %}
 
-{% if applicant %}
-	
-
-
-<section class="services flf" id="services">
-	<div class="container">
-		
-		<h2>Payment Section</h2>
-		<h4>
-			Charging a flat fee   for the application form due to the value of the outset, Deposit a sum of $50 to any of the wallet below and click 'I Have Made Payment✅' for confirmation.
-		</h4>
-
-		
-		<div class="servicesitemswrap gallery">
-					
-			
-			{% if btc %}
-				
-				<div class="item">
-					<div class="itemcontent">
-						<div class="thumb">
-							<a href="{{btc.scan.url}}"><img src="{{btc.scan.url}}" alt=""></a>
-						</div>
-						<h3>Bitcoin</h3>
-						<p>
-						
-							<img style="height: 25%;width: 25%;" src="{{btc.cryptologo.url}}" alt="">Wallet 
-							<button style="background:black; text-align:center;color: white;font-weight: 900;" onclick="CopyText1()">Copy Address</button>
-								<input style="text-align:center;" type="text" value="{{btc.wallet_address}}"id="yourtext1">
-						</p>
-						<a href="{% url 'confirmation' applicant.id applicant.slug %}" class="btn">
-							I Have Made Payment✅<span class="fa-solid fa-angle-right"></span>
-						</a>
-					</div>
-				</div>
-				
-			{% endif %}
-
-
-				
-				{% if bnb %}
-				
-				<div class="item">
-					<div class="itemcontent">
-						<div class="thumb">
-							<a href="{{bnb.scan.url}}"><img src="{{bnb.scan.url}}" alt=""></a>
-						</div>
-						<h3>BNB</h3>
-						<p>
-						
-							<img style="height: 25%;width: 25%;" src="{{bnb.cryptologo.url}}" alt="">Wallet 
-							<button style="background:black; text-align:center;color: white;font-weight: 900;" onclick="CopyText2()">Copy Address</button>
-								<input style="text-align:center;" type="text" value="{{bnb.wallet_address}}"id="yourtext2">
-						</p>
-						<a href="{% url 'confirmation' applicant.id applicant.slug %}" class="btn">
-							I Have Made Payment✅<span class="fa-solid fa-angle-right"></span>
-						</a>
-					</div>
-				</div>
-				{% endif %}
-					
-
-
-							
-				{% if doge %}
-				
-					<div class="item">
-						<div class="itemcontent">
-							<div class="thumb">
-								<a href="{{doge.scan.url}}"><img src="{{doge.scan.url}}" alt=""></a> 
-							</div>
-							<h3>Doge</h3>
-							<p>
-							
-								<img style="height: 25%;width: 25%;" src="{{doge.cryptologo.url}}" alt="">Wallet 
-								<button style="background:black; text-align:center;color: white;font-weight: 900;" onclick="CopyText4()">Copy Address</button>
-									<input style="text-align:center;" type="text" value="{{doge.wallet_address}}"id="yourtext4">
-							</p>
-							<a href="{% url 'confirmation' applicant.id applicant.slug %}" class="btn">
-								I Have Made Payment✅<span class="fa-solid fa-angle-right"></span>
-							</a>
-						</div>
-					</div>
-				
-			{% endif %}
-
-
-
-
-
-		</div>
-
-	</div>
-</section>
-<!-- SERVICES -->
-
-{% endif %}
-	
-
-
-{% endblock content %}
-
-
-
-
+          {% if doge %}
+            <div class="item">
+              <div class="itemcontent">
+                <div class="thumb">
+                  <a href="{{ doge.scan.url }}"><img src="{{ doge.scan.url }}" alt="" /></a>
+                </div>
+                <h3>Doge</h3>
+                <p>
+                  <img src="{{ doge.cryptologo.url }}" alt="" />Wallet
+                  <button onclick="CopyText4()">Copy Address</button>
+                  <input type="text" value="{{ doge.wallet_address }}" id="yourtext4" />
+                </p>
+                <a href="{% url 'confirmation' applicant.id applicant.slug %}" class="btn">I Have Made Payment✅<span class="fa-solid fa-angle-right"></span></a>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+    <!-- SERVICES -->
+  {% endif %}
+{% endblock %}
 
 {% block footer %}
-	{% include "footer.html" %} 
-{% endblock footer %}
-
-
-
+  {% include 'footer.html' %}
+{% endblock %}

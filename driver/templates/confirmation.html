@@ -3,60 +3,30 @@
 {% load static %}
 
 {% block header %}
-	{% include "header2.html" %} 
-{% endblock header %}
-
-
-
-
+  {% include 'header2.html' %}
+{% endblock %}
 
 {% block content %}
+  {% if applicant %}
+    <section class="confirmation flf" style="background: url({{ profile.confirm.url }}) no-repeat center; background-size: cover;">
+      <div class="container">
+        <h2>{{ applicant.type }} Confirmation ✔️</h2>
+        <h5>Upload Proof Of Payment As Confirmation Would Be Done Manually</h5>
 
+        <form class="flf df_c_v jcsb" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
 
+          <p>⚠️Upload Images only</p>
 
-{% if applicant %}
-	
+          <input type="file" name="screenshot" placeholder="Upload Proof of Payment" required accept="image/*" />
 
-
-<section class="banner flf bfr contact"   id="contact" style="background: url({{profile.confirm.url}}) no-repeat center;" id="contact" style="background-color: grey;">
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<div class="container">
-		
-	
-		<h2 style="color: white;"> {{applicant.type}}   Confirmation ✔️</h2>
-		<h5 style="color: white;">Upload Prove Of Payment As Confirmation Would Be Done Manually</h5>
-	
-
-		<form class="flf df_c_v jcsb" method="POST" enctype="multipart/form-data">
-			{% csrf_token %}
-
-			<P style="font-weight: 900;color: orange;font-size: larger;">⚠️Upload Images only </P>
-			
-			<input type="file" name="screenshot" placeholder="Upload Prove of Payment" required>
-			
-
-			<button id="submit" type="submit" name="submit">
-				Upload &nbsp; <span class="fa-solid fa-angle-right"></span>
-			</button>
-		</form>
-	
-
-	</div>
-</section> 
-
-{% endif %}
-	
-
-
-{% endblock content %}
-
-
-
-
+          <button id="submit" type="submit" name="submit">Upload &nbsp; <span class="fa-solid fa-angle-right"></span></button>
+        </form>
+      </div>
+    </section>
+  {% endif %}
+{% endblock %}
 
 {% block footer %}
-	{% include "footer.html" %} 
-{% endblock footer %}
-
-
-
+  {% include 'footer.html' %}
+{% endblock %}

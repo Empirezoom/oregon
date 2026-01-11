@@ -3,49 +3,20 @@
 {% load static %}
 
 {% block header %}
-	{% include "header2.html" %} 
-{% endblock header %}
-
-
-
-
+  {% include 'header2.html' %}
+{% endblock %}
 
 {% block content %}
-
-
-
-{% if applicant %}
-	
-
-
-	<section  class="banner flf bfr contact"   id="contact" style="background: url({{profile.thanks.url}}) no-repeat center;">
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-		<div class="container">
-			
-		
-			<!-- <h2 style="color: white;">You Are Welcome </h2> -->
-			<h5 style="color: white;font-size: larger;">{{thanks_edit.text}}</h5>
-		
-
-			
-		
-
-		</div>
-	</section>  
-
-{% endif %}
-	
-
-
-{% endblock content %}
-
-
-
-
+  {% if applicant %}
+    <section class="success flf" style="background: url({{ profile.thanks.url }}) no-repeat center; background-size: cover;">
+      <div class="floating-elements"></div>
+      <div class="container">
+        <h5>{{ thanks_edit.text }}</h5>
+      </div>
+    </section>
+  {% endif %}
+{% endblock %}
 
 {% block footer %}
-	{% include "footer.html" %} 
-{% endblock footer %}
-
-
-
+  {% include 'footer.html' %}
+{% endblock %}

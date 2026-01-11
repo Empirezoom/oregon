@@ -1,21 +1,17 @@
 {% load static %}
-<section class="contact flf" id="contact">
-    <div class="container">
-        
-        <h2>Contact Us</h2>
-        <h5>Use Below Form or Email me direct: <a href="mailto:{{profile.email}}">contact@{{profile.email}}</a></h5>
+<section class="contact-form flf" id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <h5>Use Below Form or Email me direct: <a href="mailto:{{ profile.email }}">contact@{{ profile.email }}</a></h5>
 
-        <form class="flf df_c_v jcsb" method="POST" action="{% url 'homepage' %}">
-            {% csrf_token %}
-            <input type="text" name="name" placeholder="Name*" required>
-            <input type="email" name="email" placeholder="Email*" required>
-            <input type="text" name="subject" placeholder="Subject*" required>
-            <textarea name="message" placeholder="Message..."></textarea>
-            <button id="submit" type="submit" name="submit">
-                Submit Message &nbsp; <span class="fa-solid fa-angle-right"></span>
-            </button>
-        </form>
-
-    </div>
+    <form class="flf df_c_v jcsb" method="POST" action="{% url 'homepage' %}">
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="Name*" required />
+      <input type="email" name="email" placeholder="Email*" required />
+      <input type="text" name="subject" placeholder="Subject*" required />
+      <textarea name="message" placeholder="Message..."></textarea>
+      <button id="submit" type="submit" name="submit">Submit Message &nbsp; <span class="fa-solid fa-angle-right"></span></button>
+    </form>
+  </div>
 </section>
 <!-- CONTACT -->
